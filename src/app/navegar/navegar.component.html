@@ -1,0 +1,66 @@
+<div class="layout-wrapper">
+    <!-- Header simplificado -->
+    <div class="header">
+        <div class="logo-section">
+            <img src="https://lamb-academic.upeu.edu.pe/assets/logo-upeu.png" height="60" alt="Logo">
+        </div>
+        <div class="user-section">
+                <i class="pi pi-user"></i>
+        </div>
+    </div>
+
+
+    <!-- El resto del código permanece igual -->
+    <div class="layout-main">
+        <!-- Sidebar izquierdo -->
+        <p-sidebar [(visible)]="sidebarVisible" 
+                  position="left" 
+                  [baseZIndex]="10000" 
+                  styleClass="custom-sidebar"
+                  [showCloseIcon]="false"
+                  [modal]="false">
+            <div class="sidebar-menu">
+                <!-- Botón de inicio -->
+                <div class="menu-item">
+                    <i class="pi pi-home"></i>
+                    <span>Inicio</span>
+                </div>
+
+                <!-- Enlaces a las diferentes secciones -->
+                <a routerLink="/navegar/estado">
+                    <i class="pi pi-check"></i>
+                    Estado
+                </a>
+                <a routerLink="/navegar/persona">
+                    <i class="pi pi-user"></i>
+                    Persona
+                </a>
+                <a routerLink="/navegar/privilegios">
+                    <i class="pi pi-lock"></i>
+                    Privilegios
+                </a>
+                <a routerLink="/navegar/rol-privilegios">
+                    <i class="pi pi-shield"></i>
+                    Rol-Privilegios
+                </a>
+                <a routerLink="/navegar/rol">
+                    <i class="pi pi-id-card"></i>
+                    Rol
+                </a>
+                <a routerLink="/navegar/usuario">
+                    <i class="pi pi-users"></i>
+                    Usuario
+                </a>
+                <a routerLink="/navegar/usuario-rol">
+                    <i class="pi pi-user-plus"></i>
+                    Usuario-Rol
+                </a>
+            </div>
+        </p-sidebar>
+
+        <!-- Contenido principal -->
+        <div class="content" [class.collapsed]="isCollapsed">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
